@@ -10,8 +10,38 @@ This repository implements a Realtime Image Diffusion Model with a user-friendly
 - **User Accounts**: Users can create unique usernames and save their images.
 - **Likes System**: Users can like images to express their preferences.
 
-## Architecture
-![Architecture Diagram](./architecture-diagram.png)
+## Lifecycle
+User
+  |
+  |--[1] Enter name and username
+  |    |
+  |    v
+  |  Frontend (React, TailwindCSS)
+  |    |
+  |--[2] Submit username -> Backend
+  |    |
+  |--[3] Save username to Supabase -> Supabase Database
+  |    |
+  |<--[4] Confirmation of username saved
+  |    |
+  |--[5] Enter text prompt (query)
+  |    |
+  |--[6] Submit query -> Backend
+  |    |
+  |--[7] Use Hugging Face API for Stable Diffusion 3.5 Large Turbo to generate AI image
+  |    |
+  |<--[8] Receive generated image
+  |    |
+  |--[9] Save image, prompt, and metadata -> Supabase Database
+  |    |
+  |<--[10] Confirmation of data saved
+  |    |
+  |--[11] Realtime update detected in Supabase -> Frontend
+  |    |
+  |<--[12] Display AI-generated image and allow likes
+  |
+  +-> [End]
+
 
 ### Description
 1. **Frontend**: Built with React and TailwindCSS, providing a responsive UI.
@@ -66,25 +96,6 @@ This repository implements a Realtime Image Diffusion Model with a user-friendly
 - Add pagination for image gallery.
 - Implement authentication for enhanced user security.
 - Allow users to download generated images.
-
-## Contributing
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git commit -m "Added new feature"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Create a pull request.
-
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
