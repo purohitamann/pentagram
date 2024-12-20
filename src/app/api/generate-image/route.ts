@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     const response = await fetch(url.toString(), {
       method: "GET", // Use GET for query parameters
     });
-
+   
     // Check if the response is successful
     if (!response.ok) {
       const errorText = await response.text();
