@@ -39,10 +39,12 @@ export default function ClientImagePage({
 
         const { error, data } = await supabase
             .from("comments")
-            .insert({ image_id: image.id, content: newComment });
+            .insert({ image_id: image.id, content: newComment, username: "johndoe" });
 
         if (!error) {
-            setComments([...comments, data[0]]); // Update comments locally
+            if (data) {
+                setComments([...comments, data[0]]); // Update comments locally
+            }
             setNewComment(""); // Reset input field
         } else {
             console.error("Error adding comment:", error.message);

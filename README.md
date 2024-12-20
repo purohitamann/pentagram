@@ -1,45 +1,92 @@
 # Pentagram: Instagram, but with AI Images
+# Realtime Image Diffusion Model
 
-## Getting Started
+## Overview
+This repository implements a Realtime Image Diffusion Model with a user-friendly web interface. Users can generate AI-powered images in real time by providing text prompts. The application leverages Supabase for database management and real-time updates and includes a robust architecture for generating and displaying content interactively.
 
-First, clone the GitHub repository:
+## Features
+- **Text-to-Image Generation**: Generate custom images using AI models.
+- **Realtime Updates**: New images appear instantly without requiring a page refresh.
+- **User Accounts**: Users can create unique usernames and save their images.
+- **Likes System**: Users can like images to express their preferences.
 
-```bash
-git clone https://github.com/team-headstart/pentagram.git
-```
+## Architecture
+![Architecture Diagram](./architecture-diagram.png)
 
-Then, navigate to the project directory:
+### Description
+1. **Frontend**: Built with React and TailwindCSS, providing a responsive UI.
+2. **Backend**: Handles image generation requests and integrates with Supabase for database management.
+3. **Database**: Supabase stores user information, images, and metadata (e.g., likes).
+4. **Realtime Subscription**: Listens to database changes to provide live updates.
 
-```bash
-cd pentagram
-```
+## Installation
 
-Then, install the dependencies:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/purohitamann/pentagram
+   ```
 
-```bash
-npm install
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Run the development server:
+3. Set up Supabase:
+   - Create a project on [Supabase](https://supabase.com/).
+   - Add the required tables:
+     - `images` with columns: `id`, `image_url`, `prompt`, `likes`, `username`, `created_at`.
+     - `users` with columns: `username`, `email`.
+   - Obtain your Supabase API key and URL.
 
-```bash
-npm run dev
-```
+4. Configure environment variables:
+   Create a `.env.local` file with the following:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Tasks
+6. Open your browser and navigate to `http://localhost:3000`.
 
-- Take a look at the TODOs in the repo, namely:
+## Usage
+- Enter a text prompt in the input field and click "Generate" to create an image.
+- Like images by clicking on the like button.
+- If no username is set, the application will prompt you to create one.
 
-    - `src/app/page.tsx`: This is where the user can input their prompt and generate an image. Make sure to update the UI and handle the API response to display the images generated
+## Technologies Used
+- **Frontend**: React, TailwindCSS
+- **Backend**: Node.js, Supabase Realtime
+- **Database**: Supabase PostgreSQL
 
-    - `src/app/api/generate-image/route.ts`: This is where the image generation API is implemented. Make sure to call your image generation API from Modal here
+## Future Enhancements
+- Add pagination for image gallery.
+- Implement authentication for enhanced user security.
+- Allow users to download generated images.
 
+## Contributing
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Added new feature"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Create a pull request.
 
-## Learn More
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For any issues or feature requests, feel free to open an issue on GitHub.
+
