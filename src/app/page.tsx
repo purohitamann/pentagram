@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"; // Replace with your ShadCN input
 import Post from "@/components/Post";
 import { base } from "@/lib/sup";
 import DialogBtn from "@/components/Dialog"; // Replace with your custom Dialog component path
+import { Pentagon } from "lucide-react";
 
 export default function Home() {
   const [inputText, setInputText] = useState("");
@@ -175,7 +176,7 @@ export default function Home() {
       <div className="min-h-screen flex flex-col justify-between items-center p-8 space-y-4 bg-gray-900 text-white">
         {/* Header */}
         <div className="max-w-3xl w-full text-center">
-          <h1 className="text-3xl font-bold font-sans mb-4">Realtime Image Diffusion Model</h1>
+          <h1 className="text-3xl font-bold font-sans mb-4">Pentagram <Pentagon className="inline-block" /> Realtime Image Diffusion Model</h1>
           <p className="text-lg font-sans text-gray-300">
             Enter a prompt below to generate custom images with AI!
           </p>
