@@ -1,9 +1,9 @@
 # Pentagram: Instagram, but with AI Images. Realtime Image Diffusion Model
 
-<img width="1501" alt="Screenshot 2024-12-20 at 16 51 05" src="https://github.com/user-attachments/assets/815e39b1-70c0-411e-b904-0e320bdc62df" />
-<img width="359" alt="Screenshot 2024-12-20 at 16 52 41" src="https://github.com/user-attachments/assets/c5a61352-95bf-40a3-be41-179a82c06bb4" />
-<img width="359" alt="Screenshot 2024-12-20 at 16 51 55" src="https://github.com/user-attachments/assets/c506f98a-5ba3-4d4f-b3cb-d0fb0111c5fc" />
+<img width="1464" alt="Screenshot 2024-12-21 at 02 51 27" src="https://github.com/user-attachments/assets/07ba9802-cd9c-4e3a-9159-bde76ad3d9ba" />
 
+<img width="372" alt="Screenshot 2024-12-21 at 02 51 49" src="https://github.com/user-attachments/assets/df2910d0-36b2-4a00-8dff-10fd5eab9c93" />
+<img width="374" alt="Screenshot 2024-12-21 at 02 52 20" src="https://github.com/user-attachments/assets/8ef58aaf-55f3-475a-bfc2-738bb2963224" />
 
 ## Overview
 This repository implements a Realtime Image Diffusion Model with a user-friendly web interface. Users can generate AI-powered images in real time by providing text prompts. The application leverages Supabase for database management and real-time updates and includes a robust architecture for generating and displaying content interactively.
