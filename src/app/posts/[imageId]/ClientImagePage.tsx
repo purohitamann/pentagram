@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Pentagon, CornerDownRight } from "lucide-react";
 import { Input } from "@/components/ui/input"; // Replace with your ShadCN input path
 import { base } from "@/lib/sup";
-
+import { Button } from "@/components/ui/button";
 export default function ClientImagePage({
     image,
     comments: initialComments,
@@ -52,7 +52,7 @@ export default function ClientImagePage({
     };
 
     return (
-        <div className="p-8 text-white bg-gray-900 min-h-screen">
+        <div className="p-8 text-white bg-gradient-to-r from-gray-800 to-emerald-600 min-h-screen">
             {/* Back to Home */}
             <div className="mb-6 text-sm text-gray-400 hover:text-gray-200">
                 <a href="/">← Back to Home</a>
@@ -88,42 +88,45 @@ export default function ClientImagePage({
                 <CornerDownRight className="text-gray-400" />
                 <h1 className="text-xl font-semibold text-gray-200">{image.prompt}</h1>
             </div>
+            <div className="flex flex-col">
 
-            {/* Comment Input */}
-            <div className="bg-gray-800 p-4 rounded-lg mt-6 shadow-md">
-                <h2 className="text-lg font-semibold mb-4 text-gray-200">Add a Comment</h2>
-                <form onSubmit={handleSubmit}>
-                    <Input
-                        type="text"
-                        value={newComment}
-                        onChange={(e) => setNewComment(e.target.value)}
-                        placeholder="Write your comment here..."
-                        className="bg-gray-700 border border-gray-600 text-gray-300 focus:ring-2 focus:ring-gray-500 rounded-md"
-                    />
-                    <button
-                        type="submit"
-                        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500"
-                    >
-                        Submit
-                    </button>
-                </form>
-            </div>
 
-            {/* Comments Section */}
-            <div className="bg-gray-800 p-4 rounded-lg mt-6 shadow-md">
-                <h2 className="text-lg font-semibold mb-4 text-gray-200">Comments</h2>
-                {comments.length > 0 ? (
-                    <ul>
-                        {comments.map((comment: any) => (
-                            <li key={comment.id} className="mb-4 border-b border-gray-700 pb-4">
-                                <p className="font-medium text-gray-300">{comment.username || "Anonymous"}</p>
-                                <p className="text-gray-400">{comment.content}</p>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p className="text-gray-500">No comments yet. Be the first to comment!</p>
-                )}
+                {/* Comment Input */}
+                <div className="bg-gray-800 p-4 rounded-lg mt-6 shadow-md">
+                    <h2 className="text-lg font-md   text-gray-200">Add a Comment</h2>
+                    <form onSubmit={handleSubmit} className=" flex flex-row w-full h-1/2 justify-center align-middle gap-4 items-center">
+                        <Input
+                            type="text"
+                            value={newComment}
+                            onChange={(e) => setNewComment(e.target.value)}
+                            placeholder="Write your comment here..."
+                            className="bg-gray-700 border border-gray-600 text-gray-300 focus:ring-2 focus:ring-gray-500 rounded-md"
+                        />
+                        <Button
+                            type="submit"
+                            className="bg-gray-600 hover:bg-gray-700 focus:ring-2 focus:ring-gray-500  text-white rounded-md"
+                        >
+                            Submit
+                        </Button>
+                    </form>
+                </div>
+
+                {/* Comments Section */}
+                <div className="bg-gray-800 p-4 rounded-lg mt-6 shadow-md">
+                    <h2 className="text-lg font-semibold mb-4 text-gray-200">Comments</h2>
+                    {comments.length > 0 ? (
+                        <ul>
+                            {comments.map((comment: any) => (
+                                <li key={comment.id} className="mb-4 border-b border-gray-700 pb-4">
+                                    <p className="font-medium text-gray-300">{comment.username || "Anonymous"}</p>
+                                    <p className="text-gray-400">{comment.content}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p className="text-gray-500">No comments yet. Be the first to comment!</p>
+                    )}
+                </div>
             </div>
         </div>
     );

@@ -173,10 +173,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-between items-center p-8 space-y-4 bg-gray-900 text-white">
+      <div className="min-h-screen flex flex-col justify-between items-center p-8 space-y-4 bg-gradient-to-r from-gray-800 to-emerald-600 text-white">
         {/* Header */}
         <div className="max-w-3xl w-full text-center">
-          <h1 className="text-3xl font-bold font-sans mb-4">Pentagram <Pentagon className="inline-block" /> Realtime Image Diffusion Model</h1>
+          <h1 className="text-3xl font-bold font-sans mb-4">Pentagram <Pentagon className="inline-block" /> Realtime Image Diffusion</h1>
           <p className="text-lg font-sans text-gray-300">
             Enter a prompt below to generate custom images with AI!
           </p>
@@ -224,7 +224,7 @@ export default function Home() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="px-6 bg-blue-600 hover:bg-blue-500"
+              className="px-6 bg-zinc-800 hover:bg-stone-700 disabled:bg-zinc-800 disabled:hover:bg-zinc-800"
             >
               {isLoading ? "Generating..." : "Generate"}
             </Button>
